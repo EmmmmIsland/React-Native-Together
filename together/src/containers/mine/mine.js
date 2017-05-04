@@ -16,7 +16,7 @@ import {
 } from 'react-native';
 import NavigationBar from '../../common/navigationBar'
 
-import CenterHeaderIcon from '../../../assets/img/userCenterHeader.png'
+
 import SettingCell from '../../components/mine/settingCell'
 
 
@@ -85,7 +85,7 @@ class Mine extends Component {
                     }}/>
                 <View style={{flex: 1}}>
                     <ScrollView>
-                        <Image style={styles.headerImage} source={CenterHeaderIcon}>
+
                             <Text onPress={() => {
                                 if (!userInfo) {
                                     this.props.router.redirect(RouteType.LOGIN_PAGE);
@@ -100,7 +100,7 @@ class Mine extends Component {
                                 {/*{userInfo ? this.props.userInfo.result.phone : '点击登录'}*/}
                                 {userInfo ? 188888888 : '点击登录'}
                             </Text>
-                        </Image>
+
                         <View style={styles.numberView}>
                             <View style={styles.orderNmuberView}>
                                 <Text style={styles.numberContent}>{result.accessNum}</Text>
