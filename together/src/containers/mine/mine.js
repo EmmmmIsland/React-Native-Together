@@ -7,10 +7,13 @@ import {
     TouchableOpacity,
     Dimensions,
     Button,
+    TouchableHighlight,
 } from 'react-native';
 import NavigationBar from '../../common/navigationBar'
 import ChooseTwo from './ChooseTwo'
+import BankChoose from '../bankChoose/bankChoose'
 
+import * as RouteType from '../../constants/routeType';
 
 class Mine extends Component {
 
@@ -27,7 +30,7 @@ class Mine extends Component {
 
     }
 
-    routerToChooseTwo(){
+    routerToChooseTwo() {
         this.props.navigator.push({
             component: ChooseTwo,
             params: {
@@ -46,12 +49,13 @@ class Mine extends Component {
         return (
             <View style={stylesCommon.container}>
                 <NavigationBar
-                    title={ '我的' }
-                    navigator={ navigator }
+                    title={'我的'}
+                    navigator={navigator}
                     leftButtonConfig={{
                         type: 'string',
                         title: '设置',
                         onClick: () => {
+
                         }
                     }}
                     rightIconFont='&#xe617;'
@@ -60,8 +64,14 @@ class Mine extends Component {
                         onClick: () => {
                         }
                     }}/>
-
-                <View style={{marginTop: 50, justifyContent: 'space-around'}}>
+                <TouchableHighlight onPress={() => {
+                    this.props.navigator.push({
+                        component: BankChoose,
+                    })
+                }}>
+                    <Text style={{padding: 20}}>银行地址选择</Text>
+                </TouchableHighlight>
+                <View style={{marginTop: 30, justifyContent: 'space-around'}}>
                     <Text>选择状态 {this.state.chooseSign}</Text>
                     <View
                         style={{flexDirection: 'row'}}

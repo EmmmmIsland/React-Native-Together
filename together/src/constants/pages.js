@@ -28,6 +28,14 @@ const LOGIN_SMS_PAGE = {
     needLogin: true
 }
 
+import BankChoose from '../containers/bankChoose/bankChoose'
+const BANK_CHOOSE_PAGE = {
+    key: RouteType.BANK_CHOOSE_PAGE,
+    title: '银行选择',
+    component: BankChoose,
+    needLogin: true
+}
+
 
 
 const Pages = [
